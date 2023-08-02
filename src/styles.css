@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Roboto+Condensed&display=swap');
+
+body{
+    background-color: #1d1f2e;
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.cursor{
+    width: 20px;
+    height: 20px;
+    border: 1px solid ;
+}
