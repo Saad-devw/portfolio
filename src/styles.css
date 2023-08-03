@@ -8,10 +8,58 @@
 body{
     background-color: #1d1f2e;
     font-family: 'Roboto Condensed', sans-serif !important;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    cursor: default;
 }
 
 .cursor{
-    width: 20px;
-    height: 20px;
-    border: 1px solid ;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    border: 1px solid rgb(240, 236, 236);
+    transition: all 100ms ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
 }
+
+.cursor .inner-cursor{
+    position: relative;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.flash-cursor{
+    animation: flashCursor .2s 1 alternate linear !important ;
+}
+
+@keyframes flashCursor {
+    from{
+        height: 20px;
+        width: 20px;
+        border: 1px solid #eee;
+    } 
+    to{
+        height: 30px;
+        width: 30px;
+        border: 10px solid #eee;
+        opacity: 0;
+    }
+}
+
+/* .cursor::before{
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 5px solid #eee;
+    border-radius: 50%;
+} */
