@@ -5,6 +5,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cairo&family=Roboto+Condensed&display=swap');
 
+
+body::-webkit-scrollbar{
+    width: 12px;
+    display: none;
+}
+body::-webkit-scrollbar-track{
+    display: none;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgba(238, 238, 238, .5);
+    border-radius: 15px;
+}
+
+
 body{
     background-color: #1d1f2e;
     font-family: 'Roboto Condensed', sans-serif !important;
@@ -12,10 +26,17 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    cursor: default;
 }
 
-.cursor{
+/* body, a:hover, button:hover .logo:hover{
+    cursor: none     !important;
+} */
+
+.active{
+    color: #0088FF;
+}
+
+/* .cursor{
     position: absolute;
     width: 26px;
     height: 26px;
@@ -26,7 +47,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: -1;
+    z-index: 0;
 }
 
 .cursor .inner-cursor{
@@ -53,7 +74,7 @@ body{
         border: 10px solid #eee;
         opacity: 0;
     }
-}
+} */
 
 /* .cursor::before{
     content: "";
