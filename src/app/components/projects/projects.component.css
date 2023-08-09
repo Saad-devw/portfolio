@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 i {
     opacity: 0;
@@ -19,22 +15,13 @@ h2 {
     pointer-events: none;
 }
 
-body {
-    background-color: #E6E5E1;
-    width: 100vw;
-    height: 100vh;
-}
 
-.container {
+.card-container {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
-.container .card {
+.card-container .card {
     position: relative;
     width: 500px;
     height: 200px;
@@ -43,7 +30,7 @@ body {
     margin-bottom: 4px;
 }
 
-.container .card:before {
+.card-container .card:before {
     content: "";
     z-index: 99;
     position: absolute;
@@ -56,7 +43,7 @@ body {
     background-color: #E6E5E1;
 }
 
-.container .card:after {
+.card-container .card:after {
     content: "";
     z-index: 99;
     position: absolute;
@@ -69,7 +56,7 @@ body {
     background-color: #E6E5E1;
 }
 
-.container .card ul {
+.card-container .card ul {
     z-index: 99;
     position: absolute;
     left: 39px;
@@ -77,7 +64,7 @@ body {
     list-style-type: none;
 }
 
-.container .card ul li {
+.card-container .card ul li {
     width: 2px;
     height: 2px;
     border-radius: 2px;
@@ -85,18 +72,19 @@ body {
     background-color: #E6E5E1;
 }
 
-.container .card h2 {
+.card-container .card h2 {
     z-index: 99;
     font-family: "Poppins", sans-serif;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     right: 130px;
-    font-size: 60px;
+    font-size: 20px;
     font-weight: 700;
     color: #fff;
+    /* mix-blend-mode: difference;  */
 }
 
-.container .card .fa-arrow-right {
+.card-container .card .fa-arrow-right {
     z-index: 100;
     position: absolute;
     right: 75px;
@@ -105,30 +93,42 @@ body {
     cursor: pointer;
 }
 
-.container .card p {
+.card-container .card p {
     z-index: 99;
     position: absolute;
     top: 20px;
     right: 70px;
-    color: #333;
+    color: #000;
     opacity: 0.7;
-    font-size: 12px;
-    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: bold;
+    word-spacing: 1px;
     writing-mode: vertical-lr;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
-.container .card .pic {
+.card-container .card:hover p {
+    writing-mode: horizontal-tb;
+    color: #fff;
+    font-size: 20px;
+    right: 10px;
+}
+
+.card-container .card .pic {
     z-index: 100;
     width: 400px;
     height: 200px;
-    background-image: url("https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80");
-    background-size: 100% 100%;
-    filter: grayscale(100%);
+    transition: all .5s ease-out;
 }
 
-.container .card .social {
+.card-container .card .pic img{
+    width: 100% !important;
+    height: 100% !important;
+    transition: all .5s ease-out;
+}
+
+.card-container .card .social {
     position: absolute;
     left: 60px;
     top: 0;
@@ -145,33 +145,33 @@ body {
     border-radius: 80px;
 }
 
-.container .card .social i:nth-of-type(1) {
+.card-container .card .social i:nth-of-type(1) {
     -webkit-transition-delay: 0.4s;
     transition-delay: 0.4s;
 }
 
-.container .card .social i:nth-of-type(2) {
+.card-container .card .social i:nth-of-type(2) {
     -webkit-transition-delay: 0.3s;
     transition-delay: 0.3s;
 }
 
-.container .card .social i:nth-of-type(3) {
+.card-container .card .social i:nth-of-type(3) {
     -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
 }
 
-.container .card .social i:nth-of-type(4) {
+.card-container .card .social i:nth-of-type(4) {
     -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
 }
 
-.container .card:hover i {
+.card-container .card:hover i {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
 }
 
-.container .card button {
+.card-container .card button {
     position: absolute;
     right: 14px;
     bottom: 14px;
@@ -186,27 +186,27 @@ body {
     mix-blend-mode: hard-light;
 }
 
-.container .card button i {
+.card-container .card button i {
     font-size: 3rem;
 }
 
-.container .card:hover button {
+.card-container .card:hover button {
     transform: scale(16.5);
 }
 
-.container .card:hover p {
+.card-container .card:hover p {
     color: #fff;
 }
 
-.container .card:hover .pic {
+.card-container .card:hover .pic {
     filter: grayscale(0);
 }
 
-.container .card2 .pic {
+.card-container .card:nth-child(even) .pic {
     background-image: url("https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-0.3.5&s=3a2fc3039516555bbb2e9cd2967bd321&auto=format&fit=crop&w=1537&q=80");
 }
 
-.container .card2 button {
+.card-container .card:nth-child(even) button {
     background-color: #2b26c3;
 }
 

@@ -1,67 +1,194 @@
 .section-heading {
-    font-family: "Dancing Script", cursive;
-    text-align: center;
-    font-size: 64px;
-    color: #10996d;
-    margin: 0 0 70px;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-  
-  .profile {
-    position: relative;
-    transition: all 0.3s;
-  }
-  
-  .profile:hover {
-    transform: translateY(25px);
-  }
-  
-  .profile img {
-    max-width: 100%;
-    border-radius: 50%;
-    border: 5px solid #f7f7f7;
-    filter: drop-shadow(-20px 0 10px rgba(0, 0, 0, 0.1));
-    cursor: pointer;
+  text-align: center;
+  font-size: 64px;
+  color: #5918df;
+  margin: 0 0 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.profile {
+  position: relative;
+  transition: all 0.3s;
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.profile:hover {
+  transform: translateY(25px);
+}
+
+.profile img {
+  max-width: 100%;
+  border-radius: 50%;
+  border: 5px solid #5918df;
+  filter: drop-shadow(-20px 0 10px rgba(0, 0, 0, 0.1));
+  cursor: pointer;
+}
+
+.profile:not(:first-child) img {
+  margin-left: -20px;
+}
+
+.profile .name {
+  position: absolute;
+  background-color: #5918df;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 100px;
+  bottom: -80px;
+  left: 50%;
+  white-space: nowrap;
+  transform: translate(-50%, -50px);
+  letter-spacing: 1px;
+  font-size: 20px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.profile .name::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #5918df;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.profile img:hover+.name {
+  opacity: 1;
+  transform: translateX(-50%);
+  box-shadow: 0 10px 20px rgba(86, 86, 198, 0.3);
+}
+
+#about {
+  height: auto;
+  overflow: hidden;
+  position: relative
+}
+
+#about:after {
+  bottom: -100px;
+  box-shadow: 0 0 80px 0 #07060a;
+  content: "";
+  height: 100px;
+  left: 0;
+  position: absolute;
+  width: 100%
+}
+
+#about .down-arrow {
+  background-image: linear-gradient(-180deg, #0d0c0e, #0e0d10)
+}
+
+#about .code-wrp {
+  font-family: Roboto Mono, Courier New, Courier, monospace !important;
+  font-size: 16px;
+  line-height: 1.6
+}
+
+#about .code-l {
+  position: relative;
+  z-index: 1
+}
+
+#about .code-l:after {
+  color: #3b3553;
+  content: attr(data-line-nr);
+  font-family: Roboto Mono, Courier New, Courier, monospace !important;
+  font-size: 16px;
+  left: -60px;
+  line-height: 1.6;
+  position: absolute;
+  top: 0;
+  z-index: 3
+}
+
+#about .code-l:hover {
+  position: relative
+}
+
+#about .code-l:hover:before {
+  background-color: #231d28;
+  content: "";
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  top: 0;
+  width: 300%;
+  z-index: -2
+}
+
+#about .methods {
+  color: #5918df;
+  display: inline
+}
+
+#about .propname {
+  color: #eeff31
+}
+
+#about .dot {
+  color: #3b3553;
+  display: inline
+}
+
+#about .comment {
+  color: #78707e;
+  display: inline
+}
+
+#about .scope {
+  color: #e3244c;
+  display: inline
+}
+
+#about .prop2 {
+  color: #24e394
+}
+
+#about .string {
+  color: #24e33a
+}
+
+#about .number {
+  color: #e39d24
+}
+
+#about .cursor:before {
+  animation: blink .8s infinite;
+  content: "|";
+  opacity: 0
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0
   }
 
-  .profile:not(:first-child) img {
-    margin-left: -20px;
+  50% {
+    opacity: 1
   }
-  
-  .profile .name {
-    position: absolute;
-    background-color: #10996d;
-    color: #fff;
-    font-family: "Bebas Neue", cursive;
-    padding: 15px 30px;
-    border-radius: 100px;
-    bottom: -80px; left: 50%;
-    white-space: nowrap;
-    transform: translate(-50%, -50px);
-    letter-spacing: 1px;
-    font-size: 20px;
-    opacity: 0;
-    transition: all 0.3s;
+
+  to {
+    opacity: 0
   }
-  
-  .profile .name::before {
-    content: "";
-    position: absolute;
-    width: 15px; height: 15px;
-    background-color: #10996d;
-    top: 0; left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+@media screen and (max-width: 768px) {
+  #about .dot {
+    display: none
   }
-  
-  .profile img:hover + .name {
-    opacity: 1;
-    transform: translateX(-50%);
-    box-shadow: 0 10px 20px rgba(86, 86, 198, 0.3);
+
+  #about .code-l:after {
+    left: -50px
   }
+}
