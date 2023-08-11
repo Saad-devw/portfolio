@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ export class AppComponent {
   title = 'portfolio';
 
   ngOnInit(){
+    AOS.init();
     const cursor = document.querySelector('.cursor');
     document.addEventListener('mousemove', (e) => {
       cursor?.setAttribute("style", "top: "+(e.pageY -13)+"px; left: "+(e.pageX - 13)+"px;");

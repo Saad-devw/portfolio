@@ -14,3 +14,46 @@
     background: url('../../../assets/img/bg-cover.webp') no-repeat;
     background-size: cover;
 }
+.my-name, .my-job, .ican-do{
+    width: fit-content;
+}
+
+.my-name::before, .my-job::before, .ican-do::before{
+    content: "";
+    position: absolute;
+    top: -15px;
+    padding: 40px 0px;
+    right: 0;
+    height: 100%;
+    z-index: 88;
+    background: rgb(109, 8, 109);
+    overflow: visible;
+}
+
+.my-name::before{
+    animation-name: flash;
+    animation-duration: .7s;
+    animation-delay: 1.4s;
+    animation-iteration-count: 1;
+}
+.my-job::before{
+    animation-name: flash;
+    animation-duration: .7s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+}
+.ican-do::before{
+    animation-name: flash;
+    animation-duration: .7s;
+    animation-delay: 2.6s;
+    animation-iteration-count: 1;
+}
+
+@keyframes flash{
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0%;
+    }
+}

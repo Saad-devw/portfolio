@@ -11,8 +11,8 @@ let loader = document.getElementById('loader');
 document.addEventListener('DOMContentLoaded', (e) => {
   setTimeout(() => {
     loader?.classList.add('fade-loader');
-  }, 500);
+  }, 200);
   setTimeout(() => {
     loader?.classList.add('hidden');
-  }, 1000);
+  }, 500);
 })
